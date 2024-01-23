@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,15 +10,17 @@
     <div class="container">
       <div class="to-do-app">
         <h1 class="title">To Do List</h1>
-        <form method="GET">
+        <form method="POST">
           <div class="row">
             <input
+              aria-label="add your task"
+              name="newTask"
               class="text"
               type="text"
               id="input-box"
               placeholder="Add your task"
             />
-            <input class="add-button" onclick="addTask()" value="Add" />
+            <input type="submit" class="add-button" value="Add" />
           </div>
           <ul id="list-container"></ul>
         </form>
