@@ -36,7 +36,7 @@
   margin-bottom: 25px;
 }
 
-input {
+.text {
   flex: 1;
   border: none;
   outline: none;
@@ -45,7 +45,7 @@ input {
   font-weight: 14px;
 }
 
-button {
+.add-button {
   border: none;
   outline: none;
   padding: 16px 50px;
@@ -60,31 +60,13 @@ ul li {
   list-style: none;
   font-size: 17px;
   padding: 15px 8px 12px 50px;
-  user-select: none;
   cursor: pointer;
   position: relative;
-}
-
-ul li::before {
-  content: "";
-  position: absolute;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  content: "👀";
-  background-size: cover;
-  background-position: center;
-  top: 12px;
-  left: 8px;
 }
 
 ul li.checked {
   text-decoration: line-through;
   color: #999;
-}
-
-ul li.checked::before {
-  content: "✅";
 }
 
 ul li span {
@@ -102,4 +84,9 @@ ul li span {
 
 ul li span:hover {
   background: #edeef0;
+}
+
+ul li button {
+  position: absolute;
+  right: 0;
 }

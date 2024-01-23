@@ -6,11 +6,17 @@ const addTask = () => {
     alert("Please enter a task");
   } else {
     const li = document.createElement("li");
-    li.innerHTML = inputBox.value;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.class = "checkbox";
+    li.appendChild(checkbox);
+    const textNode = document.createTextNode(inputBox.value);
+    li.appendChild(textNode);
     listContainer.appendChild(li);
-    const span = document.createElement("span");
-    span.innerHTML = "\u00d7";
-    li.appendChild(span);
+    const deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "Delete";
+    deleteButton.class = "delete-button";
+    li.appendChild(deleteButton);
   }
   inputBox.value = "";
   saveData();
@@ -25,10 +31,10 @@ inputBox.addEventListener("keyup", (event) => {
 listContainer.addEventListener(
   "click",
   (event) => {
-    if (event.target.tagName === "LI") {
-      event.target.classList.toggle("checked");
+    if (event.target.class === "checkbox") {
+      event.target.parentElement.classList.toggle("checked");
       saveData();
-    } else if (event.target.tagName === "SPAN") {
+    } else if (event.target.class === "delete-button") {
       event.target.parentElement.remove();
       saveData();
     }
